@@ -19,7 +19,8 @@ eventsApp.controller('EventController',
                     creatorName: 'Bob Smith',
                     duration: '1 hr',
                     level: 'Advanced',
-                    abstract: 'In this session you will learn the ins and outs of directives!'
+                    abstract: 'In this session you will learn the ins and outs of directives!',
+                    upVoteCount: 0
 
 
                 },
@@ -28,14 +29,16 @@ eventsApp.controller('EventController',
                     creatorName: 'John Doe',
                     duration: '30 mins',
                     level: 'Introductory',
-                    abstract: 'In this session you will learn the ins and outs of directives'
+                    abstract: 'In this session you will learn the ins and outs of directives',
+                    upVoteCount: 0
                 },
                 {
                     name: 'Well Behaved Controllers',
                     creatorName: 'Bob Smith',
                     duration: '2 hours',
                     level: 'Intermediate',
-                    abstract: 'This session you take a closer look at scopes. Learn what they do, how they do it. and how to get them to do it.'
+                    abstract: 'This session you take a closer look at scopes. Learn what they do, how they do it. and how to get them to do it.',
+                    upVoteCount: 0
                 }
             ]
           }
