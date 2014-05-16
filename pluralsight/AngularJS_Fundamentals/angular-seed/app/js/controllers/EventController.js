@@ -1,7 +1,16 @@
 'use strict';
 
 eventsApp.controller('EventController',
-	function EventController($scope){
+	function EventController($scope, $sce){
+
+        $scope.snippet = '<span style="color:red"> hi there</span>';
+        $scope.deliberatelyTrustDangerousSnippet = function() {
+            return $sce.trustAsHtml($scope.snippet);
+         };
+
+        $scope.boolValue = false;
+        $scope.mystyle = {color:'red'};
+        $scope.myclass = "blue";
 
           $scope.event = {
           	name: 'Angular Boot Camp',
@@ -42,6 +51,10 @@ eventsApp.controller('EventController',
                 }
             ]
           }
+
+        $scope.toggleShowHide = function(session) {
+            $scope.boolValue = !$scope.boolValue;
+        };
 
           $scope.upVoteSession = function(session) {
                   session.upVoteCount++;

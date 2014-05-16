@@ -86,3 +86,11 @@ select, textarea {
 ul.thumbnails {
     list-style-type: none;
 }
+
+.blue {
+    color: blue;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-clock, .x-ng-cloak {
+    display: none;
+}
