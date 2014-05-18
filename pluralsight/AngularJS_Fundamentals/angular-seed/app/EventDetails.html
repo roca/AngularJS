@@ -25,10 +25,12 @@
             <div ng-bind-html="snippet">some title</div>
             <div ng-bind-html="deliberatelyTrustDangerousSnippet()">some title</div>
 
-            <h2 ng-show="boolValue">Show This</h2>
+            <h2 ng-show="boolValue">{{"Show This" | uppercase}}</h2>
             <h2 ng-hide="boolValue">Hide This</h2>
 
-            <button ng-click="toggleShowHide()">
+            <!-- <div>{{event | json}}</div> -->
+
+            <button ng-click="toggleShowHide()" ng-disabled="buttonDisabled">
                 show/hide
             </button>
 
@@ -48,8 +50,19 @@
         			</div>
             <hr/>
                 <h3> Sessions </h3>
+                Order By:
+                <select ng-model="sortorder" class="input-small">
+                    <option selected value="name">Name</option>
+                    <option value="-upVoteCount">Votes</option>
+                </select>
+                <select ng-model="query.level" class="input-small>">
+                    <option selected value="">All</option>
+                    <option selected value="introductory">Introductory</option>
+                    <option selected value="intermediate">Intermediate</option>
+                    <option selected value="advanced">Advanced</option>
+                </select>
             <ul class="thumbnails">
-                <li ng-repeat="session in event.sessions">
+                <li ng-repeat="session in event.sessions | orderBy:sortorder | filter:query">
 
                     <div class="row session">
                          <div class="span0 well votingWidget">
