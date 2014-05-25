@@ -91,6 +91,12 @@ ul.thumbnails {
     color: blue;
 }
 
+/* Angular styles below */
+
+input.ng-invalid.ng-dirty{
+    background-color: pink;
+}
+
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-clock, .x-ng-cloak {
     display: none;
 }
