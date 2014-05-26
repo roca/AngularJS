@@ -14,7 +14,12 @@ eventsApp.controller('EventController',
         $scope.buttonDisabled = false
         $scope.sortorder = "name";
 
-          $scope.event = eventData.event;
+        eventData.getEvent().then(
+          function(event){$scope.event = event;},
+          function(statusCode){console.log(statusCode);}
+
+        );
+          
 
         $scope.toggleShowHide = function(session) {
             $scope.boolValue = !$scope.boolValue;
