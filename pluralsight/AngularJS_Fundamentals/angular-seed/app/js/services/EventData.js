@@ -1,22 +1,39 @@
-eventsApp.factory('eventData',function($http,$q) {
+
+eventsApp.factory('eventData',function($resource) {
+  var resource = $resource('/app/data/event/:id.json',{id:'@id'});
+
   return {
     getEvent: function(){
-      var deferred = $q.defer();
-
-      $http({method: 'GET', url: '/app/data/event/1.json'}).
-      success(function(data,status,headers,config){
-          deferred.resolve(data);
-      }).
-      error(function(data,status,header,config){
-          deferred.reject(status);
-      });
-
-      return deferred.promise;
+        return resource.get({id:1});
+    },
+    save: function(event) {
+      event.id = 999;
+      return resource.save(event);
     }
 
   };
 
 });
+
+// eventsApp.factory('eventData',function($http,$q) {
+//   return {
+//     getEvent: function(){
+//       var deferred = $q.defer();
+
+//       $http({method: 'GET', url: '/app/data/event/1.json'}).
+//       success(function(data,status,headers,config){
+//           deferred.resolve(data);
+//       }).
+//       error(function(data,status,header,config){
+//           deferred.reject(status);
+//       });
+
+//       return deferred.promise;
+//     }
+
+//   };
+
+// });
 
 // eventsApp.factory('eventData',function() {
 

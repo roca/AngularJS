@@ -14,11 +14,17 @@ eventsApp.controller('EventController',
         $scope.buttonDisabled = false
         $scope.sortorder = "name";
 
-        eventData.getEvent().then(
-          function(event){$scope.event = event;},
-          function(statusCode){console.log(statusCode);}
+        eventData.getEvent().$promise.then(
+          function(event){$scope.event = event;console.log(event)},
+          function(response){console.log(response);}
 
         );
+
+        // eventData.getEvent().then(
+        //   function(event){$scope.event = event;},
+        //   function(statusCode){console.log(statusCode);}
+
+        // );
           
 
         $scope.toggleShowHide = function(session) {
