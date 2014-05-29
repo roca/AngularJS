@@ -1,7 +1,7 @@
 'use strict';
 
 eventsApp.controller('EventController',
-	function EventController($scope, $sce,eventData){
+	function EventController($scope, $sce,eventData,$anchorScroll){
 
         $scope.snippet = '<span style="color:red"> hi there</span>';
         $scope.deliberatelyTrustDangerousSnippet = function() {
@@ -26,6 +26,9 @@ eventsApp.controller('EventController',
 
         // );
           
+        $scope.scrollToSession = function () {
+          $anchorScroll();
+        };
 
         $scope.toggleShowHide = function(session) {
             $scope.boolValue = !$scope.boolValue;
