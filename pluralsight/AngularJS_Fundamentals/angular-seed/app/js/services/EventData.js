@@ -9,6 +9,9 @@ eventsApp.factory('eventData',function($resource) {
     save: function(event) {
       event.id = 999;
       return resource.save(event);
+    },
+    getAllEvents: function() {
+      return [resource.get({id:1}),resource.get({id:2}),resource.get({id:3})];
     }
 
   };
