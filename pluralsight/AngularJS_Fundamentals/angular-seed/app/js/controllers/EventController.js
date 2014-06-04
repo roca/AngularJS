@@ -1,7 +1,7 @@
 'use strict';
 
 eventsApp.controller('EventController',
-	function EventController($scope, $sce,eventData,$anchorScroll){
+	function EventController($scope, $sce,eventData,$anchorScroll,$routeParams){
 
         $scope.snippet = '<span style="color:red"> hi there</span>';
         $scope.deliberatelyTrustDangerousSnippet = function() {
@@ -14,7 +14,7 @@ eventsApp.controller('EventController',
         $scope.buttonDisabled = false
         $scope.sortorder = "name";
 
-        eventData.getEvent().$promise.then(
+        eventData.getEvent($routeParams.eventId).$promise.then(
           function(event){$scope.event = event;console.log(event)},
           function(response){console.log(response);}
 

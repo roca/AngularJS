@@ -97,6 +97,6 @@ input.ng-invalid.ng-dirty{
     background-color: pink;
 }
 
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-clock, .x-ng-cloak {
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
     display: none;
 }

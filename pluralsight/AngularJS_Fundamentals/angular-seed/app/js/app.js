@@ -18,5 +18,6 @@ var eventsApp = angular.module('eventsApp', ['ngSanitize','ngResource','ngRoute'
     		templateUrl: 'templates/EventDetails.html',
     		controller: 'EventController'
     	});
+        $routeProvider.otherwise({redirectTo: '/events'});
     });
 
