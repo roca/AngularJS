@@ -1,12 +1,16 @@
 'use strict';
 
 eventsApp.controller('EventController',
-	function EventController($scope, $sce,eventData,$anchorScroll,$routeParams){
+	function EventController($scope, $sce,eventData,$anchorScroll,$routeParams,$route){
 
         $scope.snippet = '<span style="color:red"> hi there</span>';
         $scope.deliberatelyTrustDangerousSnippet = function() {
             return $sce.trustAsHtml($scope.snippet);
          };
+
+         $scope.reload = function() {
+           $route.reload();
+         }
 
         $scope.boolValue = false;
         $scope.mystyle = {color:'red'};
@@ -15,8 +19,13 @@ eventsApp.controller('EventController',
         $scope.sortorder = "name";
 
         eventData.getEvent($routeParams.eventId).$promise.then(
-          function(event){$scope.event = event;console.log(event)},
-          function(response){console.log(response);}
+          function(event){
+            $scope.event = event;
+            //console.log(event);
+          },
+          function(response){
+            //console.log(response);
+          }
 
         );
 
