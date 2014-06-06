@@ -4,6 +4,7 @@ eventsApp.factory('eventData',function($resource) {
 
   return {
     getEvent: function(eventId){
+      //console.log(eventId);
         return resource.get({id:eventId});
     },
     save: function(event) {
