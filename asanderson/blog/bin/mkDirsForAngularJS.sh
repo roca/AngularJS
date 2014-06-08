@@ -1,0 +1,14 @@
+#!/bin/sh -f
+touch app/assets/javascripts/controllers
+touch app/assets/javascripts/controllers/main
+touch app/assets/javascripts/controllers/global
+touch app/assets/javascripts/directives
+touch app/assets/javascripts/directives/main
+touch app/assets/javascripts/directives/global
+touch app/assets/javascripts/filters
+touch app/assets/javascripts/filters/main
+touch app/assets/javascripts/filters/global
+touch app/assets/javascripts/services
+touch app/assets/javascripts/services/main
+touch app/assets/javascripts/services/global
+touch app/assets/templates

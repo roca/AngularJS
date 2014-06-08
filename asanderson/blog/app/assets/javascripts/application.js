@@ -16,4 +16,4 @@
 //= require underscore-min
 //= require bootstrap
 //= require angular
-
+//= require angular-route
