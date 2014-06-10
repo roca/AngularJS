@@ -6,3 +6,6 @@
 
 	$scope.viewPost = (postId) ->
 		$location.url('/post/'+postId)
+
+	$scope.navNewPost = ->
+		$location.url('/post/new')
