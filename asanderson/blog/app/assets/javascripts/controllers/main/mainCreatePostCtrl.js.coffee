@@ -11,7 +11,7 @@
 		$location.url('/post/new')
 
 	$scope.navHome = ->
-		$location.url
+		$location.url('/')
 
 	$scope.createPost = ->
 		postData.createPost($scope.formData)

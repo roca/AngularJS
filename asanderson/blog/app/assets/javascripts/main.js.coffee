@@ -26,3 +26,7 @@ Blog.config(['$routeProvider', ($routeProvider) ->
   $routeProvider.otherwise({ templateUrl: '../assets/mainIndex.html', controller: 'IndexCtrl' } )
 
 ])
+
+Blog.config(["$httpProvider", (provider) ->
+	provider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content')
+])
