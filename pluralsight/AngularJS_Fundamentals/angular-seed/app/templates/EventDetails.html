@@ -51,7 +51,10 @@
                 <li ng-repeat="session in event.sessions | orderBy:sortorder | filter:query" class='span11' id="session{{session.id}}">
 
                     <div class="row session">
-                         <upvote/>
+
+
+<upvote upvote="upVoteSession(session)" downvote="downVoteSession(session)" count="session.upVoteCount" />
+
                        <div class="well span9">
                             <h4 class="well-title">{{session.name}}</h4>
                             <h6 class="margin-top:-10px">{{session.creatorName}}</h6>
