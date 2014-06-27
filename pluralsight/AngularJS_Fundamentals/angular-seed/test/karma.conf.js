@@ -11,6 +11,7 @@ module.exports = function(config){
       'bower_components/angular/angular-sanitize.min.js',
       'bower_components/angular/angular-resource.js',
       'bower_components/angular-route/angular-route.js',
+      '../test/lib/sinon-1.10.2.js',
       'js/**/*.js',
       '../test/unit/**/*.js'
     ],
