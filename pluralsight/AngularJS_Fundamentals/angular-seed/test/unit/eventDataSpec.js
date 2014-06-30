@@ -6,14 +6,6 @@ describe('eventData',function(){
 
     beforeEach(module('eventsApp'));
 
-    //  beforeEach(function(){
-    //  	mockEventResource = sinon.stub({get: function(){}});
-    //  	module(function($provide){
-    //  		$provide.value('$resource',mockEventResource);
-
-    //  	})
-    // })
-
      describe('get',function(){
 
 	    it("should issue a GET request to '/app/data/event/1.json' when the id is 1",inject(function(eventData,$httpBackend){
