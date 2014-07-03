@@ -3,6 +3,15 @@ module.exports = function(config){
 
     basePath : '../app',
 
+    preprocessors: {
+        '**/*.html':'ng-html2js'
+    },
+
+    // ngHtml2JsPreprocessor:{
+    //     stripPrefix: 'app/'
+    //     prependPrefix: 'app/'
+    // },
+
     files : [
       'js/jquery-1.11.1.min.js',
       'bower_components/angular/angular.js',
@@ -13,7 +22,8 @@ module.exports = function(config){
       'bower_components/angular-route/angular-route.js',
       '../test/lib/sinon-1.10.2.js',
       'js/**/*.js',
-      '../test/unit/**/*.js'
+      '../test/unit/**/*.js',
+      'templates/directives/*.html'
     ],
 
     autoWatch : true,
@@ -26,7 +36,8 @@ module.exports = function(config){
             'karma-chrome-launcher',
             'karma-firefox-launcher',
             'karma-jasmine',
-            'karma-junit-reporter'
+            'karma-junit-reporter',
+            'karma-ng-html2js-preprocessor'
             ],
 
     junitReporter : {
