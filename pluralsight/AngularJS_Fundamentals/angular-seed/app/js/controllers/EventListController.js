@@ -5,7 +5,7 @@ eventsApp.controller('EventListController',
       $scope.events = eventData.getAllEvents();
 
       $scope.navigateToDetails = function(event){
-           $location.url('/event/' + event.id)
+      	   $location.url('/event/' + event.id);
       };
   }
 );

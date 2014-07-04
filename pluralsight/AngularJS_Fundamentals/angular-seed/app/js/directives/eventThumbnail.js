@@ -6,7 +6,8 @@ eventsApp.directive('eventThumbnail',function($compile) {
 		replace: true,
 		templateUrl: 'templates/directives/eventThumbnail.html',
 		scope: {
-			event: "="
+			event: "=",
+			showDetails: "&"
 		}
 	};
 
