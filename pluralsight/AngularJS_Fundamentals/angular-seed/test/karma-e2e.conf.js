@@ -11,8 +11,9 @@ module.exports = function(config) {
       '../test/e2e/**/*.js'
     ],
 
+    urlRoot: '/',
     proxies: {
-      '/': 'http://localhost:8000/app'
+      '/': 'http://localhost:8000/'
     },
 
     exclude: [
@@ -25,10 +26,10 @@ module.exports = function(config) {
     // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
     logLevel: config.LOG_WARN,
 
-    browsers: ['Chrome'],
+    browsers: ['Safari'],
 
     plugins : [
-      'karma-chrome-launcher',
+      'karma-safari-launcher',
       'karma-ng-scenario'
     ],
 
