@@ -2,7 +2,6 @@
 <html ng-app="gemStore">
   <head>
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="application.css" />
     <script type="text/javascript" src="angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
   </head>
@@ -36,26 +35,37 @@
         <section ng-controller="TabController as tab">
           <ul class="nav nav-pills">
             <li ng-class="{ active:tab.isSet(1) }">
-              <a href="" ng-click="tab.setTab(1)">Description</a>
+              <a href ng-click="tab.setTab(1)">Description</a>
             </li>
             <li ng-class="{ active:tab.isSet(2) }">
-              <a href="" ng-click="tab.setTab(2)">Specs</a>
+              <a href ng-click="tab.setTab(2)">Specs</a>
             </li>
             <li ng-class="{ active:tab.isSet(3) }">
-              <a href="" ng-click="tab.setTab(3)">Reviews</a>
+              <a href ng-click="tab.setTab(3)">Reviews</a>
             </li>
           </ul>
 
           <!--  Description Tab's Content  -->
-          <div ng-show="tab.isSet(1)">
-            <h4>Description</h4>
-            <blockquote>{{product.description}}</blockquote>
+          <div ng-show="tab.isSet(1)" ng-include="'product-description.html'">
           </div>
 
           <!--  Spec Tab's Content  -->
           <div ng-show="tab.isSet(2)">
             <h4>Specs</h4>
-            <blockquote>Shine: {{product.shine}}</blockquote>
+            <ul class="list-unstyled">
+              <li>
+                <strong>Shine</strong>
+                : {{product.shine}}</li>
+              <li>
+                <strong>Faces</strong>
+                : {{product.faces}}</li>
+              <li>
+                <strong>Rarity</strong>
+                : {{product.rarity}}</li>
+              <li>
+                <strong>Color</strong>
+                : {{product.color}}</li>
+            </ul>
           </div>
 
           <!--  Review Tab's Content  -->
@@ -63,21 +73,17 @@
             <!--  Product Reviews List -->
             <ul>
               <h4>Reviews</h4>
-              <li ng-repeat="review in product.reviews | orderBy:'review.createdOn'">
+              <li ng-repeat="review in product.reviews">
                 <blockquote>
                   <strong>{{review.stars}} Stars</strong>
                   {{review.body}}
-                  <cite class="clearfix">—{{review.author}} on {{review.createdOn|date}}</cite>
+                  <cite class="clearfix">—{{review.author}}</cite>
                 </blockquote>
-              </li>
+              </li>  
             </ul>
 
             <!--  Review Form -->
-            <form name="reviewForm" 
-            ng-controller="ReviewController as reviewCtrl" 
-            ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)"
-              novalidate
-            >
+            <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(product)">
 
               <!--  Live Preview -->
               <blockquote >
@@ -89,15 +95,15 @@
               <!--  Review Form -->
               <h4>Submit a Review</h4>
               <fieldset class="form-group">
-                <select required ng-model="reviewCtrl.review.stars" class="form-control" ng-options="stars for stars in [5,4,3,2,1]" title="Stars">
-                  <option value="">Rate the Product</option>
+                <select ng-model="reviewCtrl.review.stars" class="form-control" ng-options="stars for stars in [5,4,3,2,1]" title="Stars">
+                  <option value>Rate the Product</option>
                 </select>
               </fieldset>
               <fieldset class="form-group">
                 <textarea ng-model="reviewCtrl.review.body" class="form-control" placeholder="Write a short review of the product..." title="Review"></textarea>
               </fieldset>
               <fieldset class="form-group">
-                <input required ng-model="reviewCtrl.review.author" type="email" class="form-control" placeholder="jimmyDean@example.org" title="Email" />
+                <input ng-model="reviewCtrl.review.author" type="email" class="form-control" placeholder="jimmyDean@example.org" title="Email" />
               </fieldset>
               <fieldset class="form-group">
                 <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
