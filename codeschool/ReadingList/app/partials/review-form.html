@@ -1,6 +1,8 @@
 <form name="reviewForm" class="form-horizontal" ng-submit="reviewFormCtrl.addReview(reviewForm, reviewFormCtrl.book)">
 
   <section class="row well live-preview" ng-show="reviewFormCtrl.book.isbn">
+   <!-- <book-cover  book="reviewFormCtrl.book"></book-cover>-->
+    
     <aside class="col-sm-3">
       <a href="http://www.amazon.com/gp/product/{{reviewFormCtrl.book.isbn}}">
         <img ng-src="http://images.amazon.com/images/P/{{reviewFormCtrl.book.isbn}}.01.ZTZZZZZZ.jpg" alt="Cover of {{reviewFormCtrl.book.title}}" class="full">

@@ -9,7 +9,7 @@
 
   <ul class="list-unstyled col-sm-8">
     <li class="book row" ng-repeat="book in readingListCtrl.books">
-      <book-cover></book-cover>
+      <book-cover  book="book"></book-cover>
       <div class="col-sm-9">
         <h3><a href="http://www.amazon.com/gp/product/{{book.isbn}}"
             >{{book.title}}</a></h3>

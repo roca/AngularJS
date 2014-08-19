@@ -10,6 +10,7 @@ angular.module('readingList', [])
 	.controller('ReadingListController',function(){
 		this.books = books;
 		this.genres = genres;
+    this.showForm = false;
 	})
 	
 	.directive('bookGenres', function(){
@@ -26,9 +27,29 @@ angular.module('readingList', [])
 	    return {
 	      restrict: 'E',
 	      templateUrl: 'partials/book-cover.html',
-	      replace: true
+	      replace: true,
+        scope: {
+          book: '='
+        }
 	    }
 	  })
+
+    .directive('reviewForm', function(){
+      return {
+        restrict: 'E',
+        templateUrl: 'partials/review-form.html',
+        replace: true,
+        controller: function (){
+            this.book = {};
+        },
+        controllerAs : 'reviewFormCtrl',
+        scope:{
+               books:  '=',
+               genres: '='
+        }
+      }
+    })
+
 	;
 
   var genres = [ 'fable', 'fantasy', 'fiction', 'folklore', 'horror', 'humor', 'legend', 'metafiction', 'mystery', 'mythology', 'non-fiction', 'poetry' ];
