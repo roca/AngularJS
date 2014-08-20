@@ -40,7 +40,14 @@ angular.module('readingList', [])
         templateUrl: 'partials/review-form.html',
         replace: true,
         controller: function (){
-            this.book = {};
+            this.book = {genres:{}};
+
+            
+          this.addReview = function(form){
+            books.push(this.book);
+            this.book = {genres:{}};
+            form.$setPristine();
+          }
         },
         controllerAs : 'reviewFormCtrl',
         scope:{
