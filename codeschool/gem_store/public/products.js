@@ -71,12 +71,10 @@
       return {
         restrict:"E",
         transclude: true,
-        template: "<div ng-repeat='tab in tabs' ng-click='select(tab)' class='btn btn-default' ng-class='{active:tab.selected}'>{{tab.title}}</div>" +
+        template: "<product-gallery></product-gallery>" +
+        "<div ng-repeat='tab in tabs' ng-click='select(tab)' class='btn btn-info' ng-class='{active:tab.selected}'>{{tab.title}}</div>" +
         "<div ng-transclude=''></div>",
-        //scope: {
-          //product: '='
-        //},
-        controller: function($scope) {
+       controller: function($scope) {
           $scope.tabs = [];
           this.addTab = function(tab) {
             if ($scope.tabs.length == 0) {

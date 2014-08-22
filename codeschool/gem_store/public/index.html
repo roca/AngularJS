@@ -8,23 +8,28 @@
   </head>
 
   <body ng-controller="StoreController as store">
- 
-        <product-tabs tabbed-product="store.products[1]"></product-tabs>
+    <header>
+      <h1 class="text-center">Flatlander Crafted Gems</h1>
+      <h2 class="text-center">– an Angular store –</h2>
+    </header>
+      <tabgroup ng-repeat='product in store.products'>
+        <h3>
+        {{product.name}}
+           <em>{{product.price | currency}}</em>
+        </h3>
 
-
-<hr/>
-        <tabgroup>
           <tab title="Description">
-            <product-description item="store.products[2]"></product-description>
+            <product-description item="product"></product-description>
           </tab>
           <tab title="Specs">
-             <div product-specs item="store.products[2]"></div>
+             <div product-specs item="product"></div>
           </tab>
           <tab title="Reviews">
-            <product-reviews reviewed-product="store.products[2]"></product-reviews>
+            <product-reviews reviewed-product="product"></product-reviews>
           </tab>
-        </tabgroup>
-      </div>
+          <hr/>
+      </tabgroup>
+  
 
  
   </body>
