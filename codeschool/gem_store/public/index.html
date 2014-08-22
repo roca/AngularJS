@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="gemStore">
+  <head>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="products.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </head>
+
+  <body ng-controller="StoreController as store">
+ 
+        <product-tabs tabbed-product="store.products[1]"></product-tabs>
+
+
+<hr/>
+        <tabgroup>
+          <tab title="Description">
+            <product-description item="store.products[2]"></product-description>
+          </tab>
+          <tab title="Specs">
+             <div product-specs item="store.products[2]"></div>
+          </tab>
+          <tab title="Reviews">
+            <product-reviews reviewed-product="store.products[2]"></product-reviews>
+          </tab>
+        </tabgroup>
+      </div>
+
+ 
+  </body>
+</html>
