@@ -5,7 +5,7 @@ describe('expensesDataService',function(){
 	beforeEach(module('app'));
 
 	beforeEach(function() {
-		jasmine.addMatcher(customMatchers);
+		jasmine.addMatchers(customMatchers);
 	});
 
 	it('should return three expense items',inject(function(expensesDataService){
