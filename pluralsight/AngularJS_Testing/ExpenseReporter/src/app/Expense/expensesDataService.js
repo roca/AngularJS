@@ -7,16 +7,18 @@
 
 		function expensesDataService($http){
 			var service = {
-				getExpenses: getExpenses;
+				getExpenses: getExpenses
 			};
-			return service
+			return service;
 			function getExpenses(){
 
-							return  [{title:'Taxi',  	description: 'To airport', amount: 89.95},
-									{title:'Lunch', 	description: 'At airport', amount: 15.40},
-									{title:'Coffee',  	description: 'starbucks',  amount: 4.93}];
+				return  [
+						new ExpenseItem('Taxi',		'To airport',	89.95),
+						new ExpenseItem('Lunch',	'At airport',	15.40),
+						new ExpenseItem('Coffee',	'starbucks',	4.93)
+				];
 
-						};
+			};
 
 		};
 })();

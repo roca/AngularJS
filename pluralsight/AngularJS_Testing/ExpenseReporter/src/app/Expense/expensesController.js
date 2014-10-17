@@ -2,25 +2,14 @@
 	'use strict'
 
 	angular.module('app')
-		.controller('expensesController',[expensesController]);
+		.controller('expensesController',['expensesDataService',expensesController]);
 
 
-		function expensesController(){
+		function expensesController(expensesDataService){
 
 			var vm = this;
-
-			vm.getExpenses = getExpenses;
-			vm.expenseItems = getExpenses();
+			vm.expenseItems = expensesDataService.getExpenses();
 
 			
-
-			function getExpenses(){
-
-				return  [{title:'Taxi',  	description: 'To airport', amount: 89.95},
-						{title:'Lunch', 	description: 'At airport', amount: 15.40},
-						{title:'Coffee',  	description: 'starbucks',  amount: 4.93}];
-
-			};
-
 		};
 })();
