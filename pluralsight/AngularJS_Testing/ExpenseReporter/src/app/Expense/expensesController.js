@@ -9,14 +9,14 @@
 
 			var vm = this;
 
-			vm.activate = activate;
-			vm.expenseItems = [];
+			vm.getExpenses = getExpenses;
+			vm.expenseItems = getExpenses();
 
-			activate();
+			
 
-			function activate(){
+			function getExpenses(){
 
-				return vm.expenseItems = [{title:'Taxi',  	description: 'To airport', amount: 89.95},
+				return  [{title:'Taxi',  	description: 'To airport', amount: 89.95},
 						{title:'Lunch', 	description: 'At airport', amount: 15.40},
 						{title:'Coffee',  	description: 'starbucks',  amount: 4.93}];
 
