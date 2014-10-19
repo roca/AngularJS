@@ -4,9 +4,6 @@ describe('expensesDataService',function(){
 
 	beforeEach(module('app'));
 
-	beforeEach(function() {
-		jasmine.addMatchers(customMatchers);
-	});
 
 	it('should return three expense items',inject(function(expensesDataService){
 		expect(expensesDataService.getExpenses().length).toBe(3);
@@ -18,10 +15,27 @@ describe('expensesDataService',function(){
 		expect(expenseItems).toContain(testExpenseItem);
 	}));
 
+    describe('reasonable expenses',function() {
+    	var taxi;
+    	var dinner;
 
-	it('taxi should be a reasonable expense',function(){
-		var taxi = new ExpenseItem('Taxi',		'To airport',	89.95);
-		expect(taxi).toBeAReasonableExpense();
-	});
+		beforeEach(function() {
+			jasmine.addMatchers(customMatchers);
+		});
+
+		beforeEach(function() {
+			taxi   = new ExpenseItem('Taxi',  'To airport',               89.95);
+			dinner = new ExpenseItem('Dinner','Dinner with John an Ward',189.95);
+		});
+
+		it('taxi should be a reasonable expense',function(){
+			expect(taxi).toBeAReasonableExpense();
+		});
+
+		it('dinner should not be a reasonable expense',function(){
+			expect(dinner).not.toBeAReasonableExpense();
+		});
+    });
+
 
 });
