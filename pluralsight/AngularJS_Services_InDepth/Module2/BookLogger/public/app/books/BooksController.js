@@ -4,11 +4,15 @@
         .controller('BooksController', BooksController);
 
 
-    function BooksController(books) {
+    function BooksController(books,dataService) {
 
         var vm = this;
 
         vm.appName = books.appName;
+
+        vm.allBooks = dataService.getAllBooks();
+
+        vm.allReaders = dataService.getAllReaders();
 
     }
 
