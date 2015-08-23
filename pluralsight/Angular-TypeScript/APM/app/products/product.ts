@@ -8,7 +8,7 @@ module app.domain{
 		description: string;
 		price: number;
 		imageUrl: string;
-		/*calculateDiscount(percent:number): number;*/
+		calculateDiscount(percent:number): number;
 	}
 	
 	
