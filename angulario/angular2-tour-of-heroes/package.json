@@ -15,7 +15,20 @@
     "systemjs": "0.19.2"
   },
   "devDependencies": {
+    "jspm": "^0.16.15",
     "live-server": "^0.9.0",
     "typescript": "^1.7.3"
+  },
+  "jspm": {
+    "directories": {
+      "baseURL": "src"
+    },
+    "dependencies": {
+      "angular2": "npm:angular2@2.0.0-alpha.44",
+      "reflect-metadata": "npm:reflect-metadata@0.1.2"
+    },
+    "devDependencies": {
+      "typescript": "npm:typescript@^1.6.2"
+    }
   }
 }
