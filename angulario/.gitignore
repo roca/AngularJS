@@ -1,2 +1,4 @@
 angular2-quickstart/node_modules
+angular2-quickstart/src/jspm_packages
 angular2-tour-of-heroes/node_modules
+angular2-tour-of-heroes/src/jspm_packages
