@@ -1,5 +1,6 @@
 /// <reference path="../../typings/angular2/angular2.d.ts" />
 
+import  "reflect-metadata";
 import {Component, View, bootstrap} from "angular2/angular2";
 
 
